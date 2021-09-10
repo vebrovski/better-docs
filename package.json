@@ -20,7 +20,7 @@
     "@babel/preset-react": "^7.0.0",
     "@vue/component-compiler-utils": "^3.0.0",
     "browser-sync": "^2.26.3",
-    "bulma": "^0.7.5",
+    "bulma": "^0.9.3",
     "chai": "^4.2.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.1",
