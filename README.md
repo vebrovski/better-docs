@@ -249,7 +249,7 @@ class YourClass {
 
 # @component plugin [BETA]
 
-Better-docs also allows you to document your [React](https://reactjs.org/) and [Vue](https://vuejs.org/) components automatically. The only thing you have to do is to add a `@component` tag. It will take all props from your components and along with an `@example` tag - will generate a __live preview__.
+Better-docs also allows you to document your [React](https://reactjs.org/) components automatically. The only thing you have to do is to add a `@component` tag. It will take all props from your components and along with an `@example` tag - will generate a __live preview__.
 
 ## Installation instructions
 
@@ -305,31 +305,6 @@ export default Documented
 
 The plugin will take the information from your [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) and put them into an array.
 
-For Vue it looks similar:
-
-```vue
-<script>
-/**
- * @component
- */
-export default {
-  name: 'ExampleComponent',
-  props: {
-    spent: {
-      type: Number,
-      default: 30,
-    },
-    remaining: {
-      type: Number,
-      default: 40,
-    }
-  },
-}
-</script>
-```
-
-In this case, props will be taken from `props` property.
-
 ## Preview
 
 `@component` plugin also modifies the behaviour of `@example` tag in a way that it can generate an actual __component preview__. What you have to do is to add an `@example` tag and return component from it:
@@ -350,46 +325,6 @@ In this case, props will be taken from `props` property.
 const Documented = (props) => {
   ///...
 }
-```
-
-**Vue example 1:**
-
-```vue
-<script>
-/**
- * @component
- * @example
- * <ExampleComponent :spent="100" :remaining="50"></ExampleComponent>
- */
-export default {
-  name: 'ExampleComponent',
-  //...
-}
-</script>
-```
-
-**Vue example 2:**
-
-```vue
-<script>
-/**
- * @component
- * @example
- * {
- *   template: `<Box>
- *     <ProgressBar :spent="spent" :remaining="50"></ProgressBar>
- *     <ProgressBar :spent="50" :remaining="50" style="margin-top: 20px"></ProgressBar>
- *   </Box>`,
- *   data: function() {
- *     return {spent: 223};
- *   }
- * }
- */
-export default {
-  name: 'ExampleComponent',
-  //...
-}
-</script>
 ```
 
 You can put as many `@example` tags as you like in one component and "caption" each of them like this:
