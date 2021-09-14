@@ -36,7 +36,7 @@ function scripts() {
 exports.scripts = scripts
 
 function docs() {
-  return run(`cd .. && ${DOCS_COMMAND}`).exec()
+  return run(`${DOCS_COMMAND}`).exec()
 }
 exports.docs = docs
 
