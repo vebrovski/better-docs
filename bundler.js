@@ -2,7 +2,6 @@ const fs = require('fs')
 const execSync = require('child_process').execSync
 const path = require('path')[process.platform === 'win32' ? 'win32' : 'posix']
 
-const VUE_WRAPPER = process.env.IS_DEV ? 'src/vue-wrapper.js' : 'lib/vue-wrapper.js'
 const REACT_WRAPPER = process.env.IS_DEV ? 'src/react-wrapper.jsx' : 'lib/react-wrapper.js'
 
 const pathCrossEnv = (path) =>
@@ -12,23 +11,12 @@ module.exports = function bundle (Components, out, config) {
   if (!Components.length) {
     return
   }
-  const vueComponents = Components.filter(c => c.component.type === 'vue')
   const reactComponents = Components.filter(c => c.component.type === 'react')
   const entry = path.join(out, 'entry.js')
   const absoluteOut = path.resolve(out)
   let init = `
     window.reactComponents = {};\n
-    window.vueComponents = {};\n
   `
-  if (vueComponents.length) {
-    init = init + `
-      import Vue from 'vue/dist/vue.js';\n
-      window.Vue = Vue;\n
-
-      import VueWrapper from '${pathCrossEnv(path.relative(absoluteOut, path.join(__dirname, VUE_WRAPPER)))}';\n
-      window.VueWrapper = VueWrapper;\n
-    `
-  }
   if (reactComponents.length) {
     const reactWrapperRelPath = pathCrossEnv(
       path.relative(absoluteOut, path.join(__dirname, REACT_WRAPPER))
