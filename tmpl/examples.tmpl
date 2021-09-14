@@ -10,8 +10,6 @@
     <?js } ?>
     <?js if (component && component.type === 'react') { ?>
         <?js= self.partial('react-component.tmpl', { example, number}) ?>
-    <?js } else if (component && component.type === 'vue') { ?>
-        <?js= self.partial('vue-component.tmpl', example) ?>
     <?js } else { ?>
         <pre class="prettyprint"><code><?js= self.htmlsafe(example.code) ?></code></pre>
     <?js } ?>

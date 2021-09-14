@@ -5,7 +5,6 @@ module.exports = {
         'mocha': true
     },
     "extends": [
-        "plugin:vue/essential",
         "eslint:recommended",
         // 'airbnb'
     ],
