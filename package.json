@@ -42,7 +42,7 @@
     "jsdoc": "^3.6.3",
     "mocha": "^9.1.1",
     "sass": "^1.39.2",
-    "semantic-release": "^17.0.7"
+    "semantic-release": "^19.0.3"
   },
   "peerDependencies": {
     "react": "^16.0.0",
