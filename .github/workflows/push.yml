@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v2.4.0
         with:
           node-version: '10.x'
-      - uses: actions/cache@v2.1.6
+      - uses: actions/cache@v3.0.11
         id: yarn-cache
         with:
           path: node_modules
@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-node@v2.4.0
         with:
           node-version: '10.x'
-      - uses: actions/cache@v2.1.6
+      - uses: actions/cache@v3.0.11
         id: yarn-cache
         with:
           path: node_modules
@@ -80,7 +80,7 @@ jobs:
         uses: actions/setup-node@v2.4.0
         with:
           node-version: '10.x'
-      - uses: actions/cache@v2.1.6
+      - uses: actions/cache@v3.0.11
         id: yarn-cache
         with:
           path: node_modules
